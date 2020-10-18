@@ -136,3 +136,9 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# idea folder
+.idea
+
+# ignore api_key.py file
+api_key.py

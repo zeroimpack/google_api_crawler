@@ -19,6 +19,10 @@ FIELDS = ['name',
           'website',
           'rating']
 
+api_file = open('api_key.py', 'r')
+API_KEY = api_file.read()
+api_file.close()
+
 
 class GooglePlaces(object):
 
@@ -34,7 +38,7 @@ class GooglePlaces(object):
             'radius': radius,
             'types': types,
             'key': self.apiKey
-        }
+                 }
         res = requests.get(endpoint_url, params=params)
         results = json.loads(res.content)
         places.extend(results['results'])
@@ -53,14 +57,14 @@ class GooglePlaces(object):
             'placeid': place_id,
             'fields': ",".join(fields),
             'key': self.apiKey
-        }
+                 }
         res = requests.get(endpoint_url, params=params)
         place_details = json.loads(res.content)
         return place_details
 
 if __name__ == '__main__':
 
-    api = GooglePlaces(apiKey="AIzaSyCGm1lid569ygk75VZ-dtWtYxmQj474y3k")
+    api = GooglePlaces(apiKey=API_KEY)
     restaurant_ls = []
     doppioni = [x.casefold() for x in r]
 

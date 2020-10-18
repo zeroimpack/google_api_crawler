@@ -142,3 +142,7 @@ cython_debug/
 
 # ignore api_key.py file
 api_key.py
+
+# ignore email info
+email_body.py
+mail_header.py

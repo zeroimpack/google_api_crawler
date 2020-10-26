@@ -5,11 +5,10 @@ from mail_header import sender_id, sender_password
 from mail_header import subject, in_copy
 from email_body import body_txt
 
+yagmail.register(sender_id, sender_password)
+yag = yagmail.SMTP(sender_id)
 
 if __name__ == "__main__":
-
-    yagmail.register(sender_id, sender_password)
-    yag = yagmail.SMTP(sender_id)
 
     for receiver in receivers:
 
